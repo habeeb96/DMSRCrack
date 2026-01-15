@@ -8,3 +8,10 @@ Cracks are a critical indicator of structural health in concrete and pavement su
 
 Our architecture leverages a dual-branch design: a CNN encoder to capture local texture details and a Transformer encoder to model long-range global dependencies. A Multi-Scale Fusion (MSF) module bridges these branches to integrate features effectively, while a Boundary  Refinement Head (BRH) ensures precise boundary delineation. Extensive experiments demonstrate that DMSRCrack achieves state-of-the-art performance, particularly in cross-domain scenarios.
 <img width="1341" height="1058" alt="newover" src="https://github.com/user-attachments/assets/d5487b59-bc05-4fdf-a284-64b61d512d8a" />
+## 📂 Dataset Download
+
+Due to file size limitations, the processed datasets (DeepCrack, Rissblder, etc.) are hosted on Google Drive:
+
+| Resource | Description | Link |
+| :--- | :--- | :--- |
+| **Datasets** | Processed DeepCrack, YCD, and merged training data | [Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1eFRsvghknTze6qdg5FpTy8JMilzlbvGx?usp=sharing) |
