@@ -10,3 +10,5 @@ pandas
 timm
 einops
 thop
+albumentations
+torchmetrics
