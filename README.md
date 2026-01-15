@@ -16,17 +16,10 @@ Due to file size limitations, the processed datasets (DeepCrack, Rissblder, etc.
 | :--- | :--- | :--- |
 | **Datasets** | ALL dataset that used in the paper | [Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1eFRsvghknTze6qdg5FpTy8JMilzlbvGx?usp=sharing) |
 
-## 📂 Resources & Downloads
+## 🧪 Inference & Weights
 
-Due to file size limitations, the processed datasets and the **ready-to-use inference kit** (containing code and weights) are hosted on Google Drive:
+We provide a standalone **Test Kit** on Google Drive containing the inference code (`test.py`) and all pre-trained weights. This allows you to run the model immediately without setting up the full repository.
 
 | Resource | Description | Link |
 | :--- | :--- | :--- |
-| **Datasets** | ALL datasets used in the paper (DeepCrack, Rissbilder, etc.) | [Download Datasets](https://drive.google.com/drive/folders/1eFRsvghknTze6qdg5FpTy8JMilzlbvGx?usp=sharing) |
-| **Inference Kit** | **Pre-trained weights** + Inference scripts (Plug & Play) | [Download Kit](INSERT_YOUR_DRIVE_LINK_HERE) |
-
-### ⚡ Quick Start with the Inference Kit
-The **Inference Kit** linked above allows you to test the model immediately without configuring the full repository.
-1. Download and extract the **Inference Kit** zip file.
-2. It contains the model weights and the `eval.py` script.
-3. Simply place your test images in the folder provided and run the script.
+| **Test Kit** | Inference Code + All Weights | [Download Test Kit](INSERT_YOUR_DRIVE_LINK_HERE) |
