@@ -1,0 +1,12 @@
+torch==2.7.0
+Python 3.10.16
+numpy
+opencv-python
+Pillow
+scipy
+tqdm
+matplotlib
+pandas
+timm
+einops
+thop
