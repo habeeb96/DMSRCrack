@@ -7,7 +7,8 @@
 Cracks are a critical indicator of structural health in concrete and pavement surfaces. However, accurate segmentation remains challenging due to complex textures, varying lighting conditions, and the diverse morphologies of cracks across different domains. To address these challenges, we propose **DMSRCrack**, a Dual-Encoder Multi-Scale Refinement Network.
 
 Our architecture leverages a dual-branch design: a CNN encoder to capture local texture details and a Transformer encoder to model long-range global dependencies. A Multi-Scale Fusion (MSF) module bridges these branches to integrate features effectively, while a Boundary  Refinement Head (BRH) ensures precise boundary delineation. Extensive experiments demonstrate that DMSRCrack achieves state-of-the-art performance, particularly in cross-domain scenarios.
-<img width="1341" height="1058" alt="newover" src="https://github.com/user-attachments/assets/d5487b59-bc05-4fdf-a284-64b61d512d8a" />
+<img width="1341" height="1058" alt="newover" src="arch.png" />
+
 ## 📂 Dataset Download
 
 Due to file size limitations, the processed datasets (DeepCrack, Rissblder, etc.) are hosted on Google Drive:
