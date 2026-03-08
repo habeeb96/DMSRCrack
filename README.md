@@ -19,8 +19,8 @@ Due to file size limitations, the processed datasets (DeepCrack, Rissblder, etc.
 
 ## 🧪 Inference & Weights
 
-We provide a standalone **Test Kit** on Google Drive containing the inference code (`Inference.py`) and all pre-trained weights. This allows you to run the model immediately without setting up the full repository.
+We provide a standalone **Test Kit** on Google Drive containing the inference code (`Inference.py`) and the pre-trained weights. This allows you to run the model immediately without setting up the full repository.
 
 | Resource | Description | Link |
 | :--- | :--- | :--- |
-| **Test Kit** | Inference Code + All Weights | [Download Test Kit](https://drive.google.com/drive/folders/1BI9O2GaCg_HqHYwHNqkgU_dVn6ZhgPSc?usp=sharing) |
+| **Test Kit** | Inference Code +  Weights | [Download Test Kit](https://drive.google.com/drive/folders/1BI9O2GaCg_HqHYwHNqkgU_dVn6ZhgPSc?usp=sharing) |
