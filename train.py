@@ -1,5 +1,6 @@
 import os
 import csv
+import random
 import torch
 import numpy as np
 import logging
@@ -19,12 +20,20 @@ from losses import PaperCompositeLoss
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# SYSTEM SETUP
-torch.manual_seed(config.SEED)
-torch.cuda.manual_seed(config.SEED)
-np.random.seed(config.SEED)
-torch.backends.cudnn.deterministic = True
-torch.backends.cudnn.benchmark = False
+# SYSTEM SETUP (Improved Reproducibility)
+def seed_everything(seed):
+    random.seed(seed)
+    os.environ['PYTHONHASHSEED'] = str(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
+    os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8"
+    torch.use_deterministic_algorithms(True, warn_only=True)
+
+seed_everything(config.SEED)
 
 def train():
     logger.info(f"Starting Training [Target: {config.TARGET_CLASSES}] on {config.DEVICE}")
@@ -39,7 +48,7 @@ def train():
     # 2. Model & Optimization
     model = DMSRCrack(in_channels=3, num_classes=2).to(config.DEVICE)
     optimizer = AdamW(model.parameters(), lr=config.LEARNING_RATE, weight_decay=config.WEIGHT_DECAY)
-    scheduler = ReduceLROnPlateau(optimizer, mode='max', patience=10, factor=0.7, verbose=True)
+    scheduler = ReduceLROnPlateau(optimizer, mode='max', patience=8, factor=0.7, verbose=True)
     
     # 3. Loss & Metrics
     criterion = PaperCompositeLoss().to(config.DEVICE)
@@ -63,8 +72,11 @@ def train():
         for batch in tqdm(train_loader, desc=f"Epoch {epoch+1}/{config.EPOCHS} [Train]"):
             img, mask = batch['image'].to(config.DEVICE), batch['mask'].to(config.DEVICE)
             optimizer.zero_grad()
-            out, _ = model(img)
-            loss = criterion(out, mask)
+            
+            # [CRITICAL FIX] Capture both outputs and pass the offset (bnd) to the loss
+            ref, bnd = model(img)
+            loss = criterion(ref, mask, offset=bnd) 
+            
             loss.backward()
             optimizer.step()
             train_loss += loss.item()
@@ -74,8 +86,10 @@ def train():
         with torch.no_grad():
             for batch in val_loader:
                 img, mask = batch['image'].to(config.DEVICE), batch['mask'].to(config.DEVICE)
-                out, _ = model(img)
-                pred = (torch.sigmoid(out) > 0.5).long()
+                
+                # In validation, we only care about the segmentation map (ref)
+                ref, _ = model(img)
+                pred = (torch.sigmoid(ref) > 0.5).long()
                 
                 metric_dice.update(pred, mask.long())
                 metric_iou.update(pred, mask.long())
