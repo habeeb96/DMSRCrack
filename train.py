@@ -73,7 +73,7 @@ def train():
             img, mask = batch['image'].to(config.DEVICE), batch['mask'].to(config.DEVICE)
             optimizer.zero_grad()
             
-            # [CRITICAL FIX] Capture both outputs and pass the offset (bnd) to the loss
+            #Capture both outputs and pass the offset (bnd) to the loss
             ref, bnd = model(img)
             loss = criterion(ref, mask, offset=bnd) 
             
