@@ -30,7 +30,6 @@ We provide a standalone **Test Kit** on Google Drive containing the inference co
 
 If you find this project useful in your research, please consider citing:
 
-```bibtex
 @article{ALSAMEAI2026107004,
 title = {Dual-encoder Multi-Scale Refinement network for robust crack segmentation across diverse domains},
 journal = {Automation in Construction},
