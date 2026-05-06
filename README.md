@@ -24,3 +24,21 @@ We provide a standalone **Test Kit** on Google Drive containing the inference co
 | Resource | Description | Link |
 | :--- | :--- | :--- |
 | **Test Kit** | Inference Code +  Weights | [Download Test Kit](https://drive.google.com/drive/folders/1BI9O2GaCg_HqHYwHNqkgU_dVn6ZhgPSc?usp=sharing) |
+
+
+## Citation
+
+If you find this project useful in your research, please consider citing:
+
+```bibtex
+@article{ALSAMEAI2026107004,
+title = {Dual-encoder Multi-Scale Refinement network for robust crack segmentation across diverse domains},
+journal = {Automation in Construction},
+volume = {188},
+pages = {107004},
+year = {2026},
+issn = {0926-5805},
+doi = {https://doi.org/10.1016/j.autcon.2026.107004},
+url = {https://www.sciencedirect.com/science/article/pii/S0926580526002451},
+author = {Habeb Al-Sameai and Radhwan A.A. Saleh and Joaquim de Moura and Rustu Akay}
+}
