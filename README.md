@@ -29,7 +29,7 @@ We provide a standalone **Test Kit** on Google Drive containing the inference co
 
 If this project contributes to your research, please cite the following publication:
 
-| Resource | Description | Link |
+| Resource | Title | Link |
 | :--- | :--- | :--- |
 | **Paper** | Dual-encoder Multi-Scale Refinement network for robust crack segmentation across diverse domains | [DOI: 10.1016/j.autcon.2026.107004](https://www.sciencedirect.com/science/article/pii/S0926580526002451) |
 
