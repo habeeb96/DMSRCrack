@@ -17,6 +17,8 @@ Due to file size limitations, the processed datasets (DeepCrack, Rissblder, etc.
 | :--- | :--- | :--- |
 | **Datasets** | ALL dataset that used in the paper | [Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1eFRsvghknTze6qdg5FpTy8JMilzlbvGx?usp=sharing) |
 
+<!--
+
 ## 🧪 Inference & Weights
 
 We provide a standalone **Test Kit** on Google Drive containing the inference code (`Inference.py`) and the pre-trained weights. This allows you to run the model immediately without setting up the full repository.
@@ -24,6 +26,8 @@ We provide a standalone **Test Kit** on Google Drive containing the inference co
 | Resource | Description | Link |
 | :--- | :--- | :--- |
 | **Test Kit** | Inference Code +  Weights | [Download Test Kit](https://drive.google.com/drive/folders/1BI9O2GaCg_HqHYwHNqkgU_dVn6ZhgPSc?usp=sharing) |
+
+-->
 
 ## 📚 Citation
 
